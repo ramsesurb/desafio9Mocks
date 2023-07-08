@@ -1,6 +1,6 @@
 import { Router } from "express";
 import { productsService } from "../Repository/index.js";
-import  CustomError  from "../services/customError.service.js";
+import  {CustomError}  from "../services/customError.service.js";
 import { Errors } from "../enums/Errors.js";
 import  {generateProductErrorInfo}  from "../services/ErrorInfo.js";
 import  {generateProductErrorParam } from "../services/ErrorParam.js";
@@ -35,23 +35,12 @@ routerProd.get("/", async (req, res) => {
 });
 //get by id
 routerProd.get("/:id", async (req, res, next) => {
-  try {
-    const {id} = req.params;
-    const pid = parseInt(id);
-    const prodById = await productsService.getByid(pid);
-
-    if (Number.isNaN(pid)) {
-      throw new CustomError({
-        name: "product get by id error",
-        cause: generateProductErrorParam(pid),
-        message: "Error obteniendo el producto por el id",
-        errorCode: Errors.INVALID_PARAM,
-      });
-    }
-    res.send(prodById);
-  } catch (error) {
-    next(error);
-  }
+  throw new CustomError({
+    name: "product get by id error",
+    cause: generateProductErrorParam(req.params.id),
+    message: "Error obteniendo el producto por el id",
+    errorCode: Errors.INVALID_PARAM,
+  });
 });
 
 

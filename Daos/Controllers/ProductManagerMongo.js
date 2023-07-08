@@ -70,7 +70,7 @@ class ProductManagerMongo {
       console.log("producto buscado", getByid);
       return getByid;
     } catch (error) {
-      console.log(error);
+     // console.log(error);
     }
   }
   async deleteById(id) {
