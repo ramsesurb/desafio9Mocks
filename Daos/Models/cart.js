@@ -3,10 +3,7 @@ import mongoose from "mongoose"
 const Collection = 'Cart'
 
 const cartSchema = new mongoose.Schema({
-  id: {
-    type: String,
-    unique: true,
-  },
+  
   productos: {
     type: [
       {

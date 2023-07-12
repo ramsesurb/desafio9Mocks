@@ -1,15 +1,24 @@
 export const generateProductErrorParam = (id) => {
-    const errorMessage = `El id no es válido. Debe ser un número entero, pero se recibió: ${id}`;
-    //console.log("Mensaje de error generado:", errorMessage);
-    return errorMessage;
+     return `
+     Mensaje de error generado: el idd producto: ${id} no es valido
+    `
   };
+  export const generateProductNfErrorParam = (id) => {
+    return `
+    Mensaje de error generado: No se encontro ningun producto con el id: ${id}
+   `
+ };
 export const generateUserErrorParam = (id) => {
     return `
-    User id no es valido, debe ser un numero entero, pero se recibio: ${id}
-    `
+    Mensaje de error generado: El id no es válido. Debe ser un número entero, pero se recibió ${id}
+   `
 }
-export const generateCartErrorParam = (id) => {
+export const generateCartErrorParam = (cid) => {
+    return `Mensaje de error generado: el id de carrito: ${cid} no es valido`
+}
+
+export const generateCartNfErrorParam = (cid) => {
     return `
-    User id no es valido se recibio: ${id}
-    `
-}
+    Mensaje de error generado:No se encontro ningun carito con el id: ${cid}
+   `
+ };

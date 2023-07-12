@@ -41,7 +41,6 @@ class ProductManagerMongo {
       }
 
       if (!prod.titulo ||!prod.descripcion ||!prod.precio ||!prod.code ||!prod.thumbnail ||!prod.stock) 
-      socket.emit("error", { message: "Todos los campos son obligatorios", status: 400 });
       {
         console.log("Todos los campos son obligatorios");
       }
